@@ -8,9 +8,17 @@
   -  The lending history data was read into a Python Pandas DataFrame
   -  The data was split into the `y` (dependent) variable, or _label_ (i.e., `loan_status`) values and the X (independent) variable, or _feature_, values.
   -  The volumes by `y` were verified
-  -  The data was split into training and testing subsets using the **train_test_spli** method
+  -  The data was split into training and testing subsets using the **train_test_split** method
   -  A logistic regression model was created and fitted using training data
-  -  A prediction w
+  -  Predictions were made on the testing data using the fitted model
+  -  The model's performance was evaluated by calculating its accuracy score, generating a confusion matrix, and creating a classification report
+  -  A new logistic regression model was created and fitted using training data, this time using **RandomOverSampler** to make the quantities artificially equal for each value of `y`
+  -  The **LogisticRegression** classifier and the resampled data were used to make predicitions on the testing data
+  -  The model's performance was evaluated by calculating its accuracy score, generating a confusion matrix, and creating a classification report
+  -
+  -
+  -
+  -  It models the probability that a given data point belongs to a particular category and makes its predictions based on this probability.
 
 * ## Overview of the Analysis
 
