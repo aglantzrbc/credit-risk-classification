@@ -5,8 +5,12 @@
 * The financial data included these fields: `loan_size`, `interest_rate`,	`borrower_income`, `debt_to_income`,	`num_of_accounts`,	`derogatory_marks`, `total_debt`, and `loan_status`. It's assumed that the first seven datapoints are the basis for generating the `loan_score` value, which determines the overall disposition of the particular loan. For this analysis, the first seven fields were therefore employed as independent variables to predict the eighth field, `loan_status`, the dependent variable.
 * The analysis involves a binary classification. The dependent variable, `loan_status`, can only take one of two discrete status values: `0` for `Healthy Loan`, presumably a loan that counts in the applicant's favor for future lending, and '1' for `High-Risk Loan`, which is probably a flag for special scrutiny by the lender.
 * The analysis proceeded as follows:
-  -  The lending history data was read in from a csv file and sight-verified
+  -  The lending history data was read into a Python Pandas DataFrame
   -  The data was split into the `y` (dependent) variable, or _label_ (i.e., `loan_status`) values and the X (independent) variable, or _feature_, values.
+  -  The volumes by `y` were verified
+  -  The data was split into training and testing subsets using the **train_test_spli** method
+  -  A logistic regression model was created and fitted using training data
+  -  A prediction w
 
 * ## Overview of the Analysis
 
