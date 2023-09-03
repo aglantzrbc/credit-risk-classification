@@ -2,23 +2,23 @@
 
 ## Overview of the Analysis
 * The purpose of the analysis was to build a model that can identify the creditworthiness of borrowers based on historical lending activity data for a peer-to-peer lending services company. Supervised machine learning techniques were used to accomplish this goal.
-* The financial data included these fields: `loan_size`, `interest_rate`,	`borrower_income`, `debt_to_income`,	`num_of_accounts`,	`derogatory_marks`, `total_debt`, and `loan_status`. It's assumed that the first seven datapoints are the basis for generating the `loan_score` value, which determines the overall disposition of the particular loan. For this analysis, the first seven fields were therefore employed as independent variables to predict the eighth field, `loan_status`, the dependent variable.
+* The financial data included these fields: `loan_size`, `interest_rate`,	`borrower_income`, `debt_to_income`,	`num_of_accounts`,	`derogatory_marks`, `total_debt`, and `loan_status`. It's assumed that the first seven datapoints are the basis for generating the `loan_score` value, which determines the overall disposition of the particular loan. For this analysis, the first seven fields were therefore collectively employed as an independent variable to predict the eighth field, `loan_status`, the dependent variable.
 * The analysis involves a binary classification. The dependent variable, `loan_status`, can only take one of two discrete status values: `0` for `Healthy Loan`, presumably a loan that counts in the applicant's favor for future lending, and '1' for `High-Risk Loan`, which is probably a flag for special scrutiny by the lender.
 * The analysis proceeded as follows:
   -  The lending history data was read into a Python Pandas DataFrame
   -  The data was split into the `y` (dependent) variable, or _label_ (i.e., `loan_status`) values and the X (independent) variable, or _feature_, values.
   -  The volumes by `y` were verified
-  -  The data was split into training and testing subsets using the **train_test_split** method
-  -  A logistic regression model was created and fitted using training data
-  -  Predictions were made on the testing data using the fitted model
+  -  The data was split into training and testing subsets using the _train_test_split_ function
+  -  A logistic regression model was instantiated using the _LogisticRegression_ classifier and fitted using the training data
+  -  The model was then used to make predictions feom the testing data
   -  The model's performance was evaluated by calculating its accuracy score, generating a confusion matrix, and creating a classification report
-  -  A new logistic regression model was created and fitted using training data, this time using **RandomOverSampler** to make the quantities artificially equal for each value of `y`
-  -  The **LogisticRegression** classifier and the resampled data were used to make predicitions on the testing data
-  -  The model's performance was evaluated by calculating its accuracy score, generating a confusion matrix, and creating a classification report
-  -
-  -
-  -
-  -  It models the probability that a given data point belongs to a particular category and makes its predictions based on this probability.
+  -  In a subsequent round, _RandomOverSampler_ resamples the data to make the quantities artificially equal for each value of `y`
+  -  A new logistic regression model was instantiated using the _LogisticRegression_ classifier and fitted using the resampled training data
+  -  The model was then used to make new predictions feom the testing data
+  -  The revised model's performance was evaluated by calculating its accuracy score, generating a confusion matrix, and creating a classification report
+* The analysis used the following two methods:
+  -  In the first iteration, the data was used as-is, even though there was a large imbalance in volume between values of the dependent variable. _train_test_split_ was used to divide the data into training and testing batches, the _LogisticRegression_ module created a predictive model, the training data was fitted to it, and predictions were made on the testing data.
+  -  In the second round, the data was artificially resampled using the _RandomOverSampler_ function, so that both possible values of `y` have the same volume. As before, the _LogisticRegression_ module created a predictive model, the resampled training data was fitted to it, and new predictions were made on the testing data.
 
 * ## Overview of the Analysis
 
