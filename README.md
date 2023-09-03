@@ -27,7 +27,9 @@
   - **Recall:** Also known as sensitivity, this is the ratio of correctly predicted positive observations to the all observations in actual class. The formula is (True Positives / (True Positives + False Negatives)).
 
 * **Machine Learning Model 1 - data used as-is, with imbalanced volumes for the two values of the `y` variable:**
-  - **Accuracy**: 
+  - **Accuracy**: The accuracy score is a nearly perfect 99%. The balanced accuracy score is a little lower, reflecting the dataset's bias toward healthy loans, though still high at 94%. Predictions were almost always correct, with only 147 incorrect out of 19,384 cases.
+  - **Precision:** A commanding 100% of loans the model predicted as healthy was actually healthy, but a less impressive 87% of loans the model predicted as high-risk were actually high-risk. The model is considerably better at predicting healthy than high risk loans.
+  - **Recall:** 100% of the healthy loans in the dataset were identified correctly as healthy, but a lower proportion (89%) of the dataset's high-risk loans were identified as such. Presumably, 11% of the dataset's high-risk loans were incorrectly classified as healthy.
 
 The dataset (77,536 data points) was split into training and testing sets. The training set was used to build an initial logistic regression model (Logistic Regression Model 1) using the `LogisticRegression` module from <a href=https://scikit-learn.org/stable/index.html>scikit-learn</a>. Logistic Regression Model 1 was then applied to the testing dataset. The purpose of the model was to determine whether a loan to the borrower in the testing set would be low- or high-risk and results are summarized below.
 
