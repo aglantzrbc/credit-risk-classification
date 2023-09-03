@@ -18,16 +18,16 @@
   -  The revised model's performance was evaluated by calculating its accuracy score, generating a confusion matrix, and creating a classification report
 * The analysis used the following two methods:
   -  In the first iteration, the data was used as-is, even though there was a large imbalance in volume between values of the dependent variable. _train_test_split_ was used to divide the data into training and testing batches, the _LogisticRegression_ module created a predictive model, the training data was fitted to it, and predictions were made on the testing data.
-  -  In the second round, the data was artificially resampled using the _RandomOverSampler_ function, so that both possible values of `y` have the same volume. As before, the _LogisticRegression_ module created a predictive model, the resampled training data was fitted to it, and new predictions were made on the testing data.
+  -  In the second round, the training data was artificially resampled using the _RandomOverSampler_ function, so that both possible values of `y` have the same volume. As before, the _LogisticRegression_ module created a predictive model, the resampled training data was fitted to it, and new predictions were made on the testing data.
 
-* ## Overview of the Analysis
+## Results:
+* **Key performance indicators definitions:**
+  - **Accuracy:** This is the proportion of the total number of predictions that were correct. It is calculated as (True Positives + True Negatives) / Total Observations. If the dataset is imbalanced, it's better to use a **balanced accuracy** score, which is calculated as the arithmetic mean of sensitivity (a.k.a., recall - the true positive rate) and specificity (true negative rate), effectively taking both classes into account in a balanced manner. Balanced accuracy compensates for the bias in favor of the majority class by giving equal weight to each class's sensitivity.
+  - **Precision:** This is the ratio of correctly predicted positive observations to the total predicted positives (True Positives / (True Positives + False Positives)). High precision indicates that false positive error is low.
+  - **Recall:** Also known as sensitivity, this is the ratio of correctly predicted positive observations to the all observations in actual class. The formula is (True Positives / (True Positives + False Negatives)).
 
-* The purpose of this analysis is to build a model that can identify the creditworthiness of borrowers.
-* A dataset of historical lending activity from a peer-to-peer lending services company was used. 
-* Dependant variable (y value) in this analysis was the "loan status" indicating if a loan is healthy or at risk. 
-* Independent Variables (x values) were loan size, interest rate, borrower income, debt to income ratio, number of accounts and derogatory marks.
-* In this analysis, we first split our data to traning and test sets. Then, define our dependent and independent variables. Next, we create logistic regression model and fit our original data to this model. Trained model is used to make predictions. Lastly, we evaluate the model`s performance. 
-* Two diffeent Logistic Regression models were created by using the original data set and randomy over resampled data set (to get rid of the imbalances). In the end, their results -which was gathered with scikit-learn library- were compared.
+* **Machine Learning Model 1 - data used as-is, with imbalanced volumes for the two values of the `y` variable:**
+  - **Accuracy**: 
 
 The dataset (77,536 data points) was split into training and testing sets. The training set was used to build an initial logistic regression model (Logistic Regression Model 1) using the `LogisticRegression` module from <a href=https://scikit-learn.org/stable/index.html>scikit-learn</a>. Logistic Regression Model 1 was then applied to the testing dataset. The purpose of the model was to determine whether a loan to the borrower in the testing set would be low- or high-risk and results are summarized below.
 
