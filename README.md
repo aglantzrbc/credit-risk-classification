@@ -19,11 +19,11 @@ Glantz Adam Bootcamp RUT-VIRT-DATA-PT-04-2023-U-LOLC-MWTH - Module 20
   -  The lending history data was read into a [Python](https://www.python.org/) [Pandas](https://pandas.pydata.org/) [DataFrame](https://www.w3schools.com/python/pandas/pandas_dataframes.asp)
   -  The data was split into the `y` (dependent) variable, or _label_ (i.e., `loan_status`) values and the X (independent) variable, or _feature_, values.
   -  The volumes by `y` were verified
-  -  The data was split into training and testing subsets using the _train_test_split_ function
-  -  A logistic regression model was instantiated using the _LogisticRegression_ classifier and fitted using the training data
+  -  The data was split into training and testing subsets using the [_train_test_split_](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) function
+  -  A [logistic regression](https://en.wikipedia.org/wiki/Logistic_regression) model was instantiated using the [_LogisticRegression_](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) classifier and fitted using the training data
   -  The model was then used to make predictions feom the testing data
-  -  The model's performance was evaluated by calculating its accuracy score, generating a confusion matrix, and creating a classification report
-  -  In a subsequent round, _RandomOverSampler_ resamples the data to make the quantities artificially equal for each value of `y`
+  -  The model's performance was evaluated by calculating its [balanced accuracy score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.balanced_accuracy_score.html), generating a [confusion matrix](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html), and creating a [classification report](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html)
+  -  In a subsequent round, [_RandomOverSampler_](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.RandomOverSampler.html) resamples the data to make the quantities artificially equal for each value of `y`
   -  A new logistic regression model was instantiated using the _LogisticRegression_ classifier and fitted using the resampled training data
   -  The model was then used to make new predictions feom the testing data
   -  The revised model's performance was evaluated by calculating its accuracy score, generating a confusion matrix, and creating a classification report
