@@ -1,6 +1,6 @@
 Glantz Adam Bootcamp RUT-VIRT-DATA-PT-04-2023-U-LOLC-MWTH - Module 20
 
-# [Credit Risk Classification Challenge]()
+# [Credit Risk Classification Challenge](https://github.com/aglantzrbc/credit-risk-classification)
 
 ## TABLE OF CONTENTS
 
@@ -12,11 +12,11 @@ Glantz Adam Bootcamp RUT-VIRT-DATA-PT-04-2023-U-LOLC-MWTH - Module 20
 6. Licenses
 
 ## 1. Overview of the Analysis
-* The purpose of the analysis was to build a model that can identify the creditworthiness of borrowers based on historical lending activity data for a peer-to-peer lending services company. Supervised machine learning techniques were used to accomplish this goal.
-* The financial data included these fields: `loan_size`, `interest_rate`,	`borrower_income`, `debt_to_income`,	`num_of_accounts`,	`derogatory_marks`, `total_debt`, and `loan_status`. It's assumed that the first seven datapoints are the basis for generating the `loan_score` value, which determines the overall disposition of the particular loan. For this analysis, the first seven fields were therefore collectively employed as an independent variable to predict the eighth field, `loan_status`, the dependent variable.
-* The analysis involves a binary classification. The dependent variable, `loan_status`, can only take one of two discrete status values: `0` for `Healthy Loan`, presumably a loan that counts in the applicant's favor for future lending, and '1' for `High-Risk Loan`, which is probably a flag for special scrutiny by the lender.
+* The purpose of the [analysis](https://bootcampspot.instructure.com/courses/3337/assignments/54015?module_item_id=961978) was to build a model that can identify the creditworthiness of borrowers based on historical lending activity data for a [peer-to-peer lending](https://www.investopedia.com/terms/p/peer-to-peer-lending.asp#:~:text=Peer%2Dto%2Dpeer%20(P2P)%20lending%20is%20a%20form,terms%20and%20enables%20the%20transactions.) services company. [Supervised machine learning](https://en.wikipedia.org/wiki/Supervised_learning) techniques were used to accomplish this goal.
+* The financial data included these fields: `loan_size`, `interest_rate`,	`borrower_income`, `debt_to_income`,	`num_of_accounts`,	`derogatory_marks`, `total_debt`, and `loan_status`. It's assumed that the first seven datapoints are the basis for generating the `loan_score` value, which determines the overall disposition of the particular loan. For this analysis, the first seven fields were therefore collectively employed as an [independent variable](https://en.wikipedia.org/wiki/Dependent_and_independent_variables) to predict the eighth field, `loan_status`, the dependent variable.
+* The analysis involves a [binary classification](https://en.wikipedia.org/wiki/Binary_classification). The dependent variable, `loan_status`, can only take one of two discrete status values: `0` for `Healthy Loan`, presumably a loan that counts in the applicant's favor for future lending, and '1' for `High-Risk Loan`, which is probably a flag for special scrutiny by the lender.
 * The analysis proceeded as follows:
-  -  The lending history data was read into a Python Pandas DataFrame
+  -  The lending history data was read into a [Python](https://www.python.org/) [Pandas](https://pandas.pydata.org/) [DataFrame](https://www.w3schools.com/python/pandas/pandas_dataframes.asp)
   -  The data was split into the `y` (dependent) variable, or _label_ (i.e., `loan_status`) values and the X (independent) variable, or _feature_, values.
   -  The volumes by `y` were verified
   -  The data was split into training and testing subsets using the _train_test_split_ function
