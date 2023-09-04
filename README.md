@@ -11,7 +11,8 @@ Glantz Adam Bootcamp RUT-VIRT-DATA-PT-04-2023-U-LOLC-MWTH - Module 20
 5. Acknowledgements
 6. Licenses
 
-## 1. Overview of the Analysis
+## 1. Overview of the Analysis:
+
 * The purpose of the [analysis](https://bootcampspot.instructure.com/courses/3337/assignments/54015?module_item_id=961978) was to build a model that can identify the creditworthiness of borrowers based on historical lending activity data for a [peer-to-peer lending](https://www.investopedia.com/terms/p/peer-to-peer-lending.asp#:~:text=Peer%2Dto%2Dpeer%20(P2P)%20lending%20is%20a%20form,terms%20and%20enables%20the%20transactions.) services company. [Supervised machine learning](https://en.wikipedia.org/wiki/Supervised_learning) techniques were used to accomplish this goal.
 * The financial data included these fields: `loan_size`, `interest_rate`,	`borrower_income`, `debt_to_income`,	`num_of_accounts`,	`derogatory_marks`, `total_debt`, and `loan_status`. It's assumed that the first seven datapoints are the basis for generating the `loan_score` value, which determines the overall disposition of the particular loan. For this analysis, the first seven fields were therefore collectively employed as an [independent variable](https://en.wikipedia.org/wiki/Dependent_and_independent_variables) to predict the eighth field, `loan_status`, the dependent variable.
 * The analysis involves a [binary classification](https://en.wikipedia.org/wiki/Binary_classification). The dependent variable, `loan_status`, can only take one of two discrete status values: `0` for `Healthy Loan`, presumably a loan that counts in the applicant's favor for future lending, and '1' for `High-Risk Loan`, which is probably a flag for special scrutiny by the lender.
@@ -32,6 +33,7 @@ Glantz Adam Bootcamp RUT-VIRT-DATA-PT-04-2023-U-LOLC-MWTH - Module 20
   -  In the second round, the data was artificially resampled using the _RandomOverSampler_ function, so that both possible values of `y` have the same volume. As before, the _LogisticRegression_ module created a predictive model, the resampled training data was fitted to it, and new predictions were made on the testing data.
 
 ## 2. Results:
+
 * **Key performance indicators definitions:**
   - **Accuracy:** This is the proportion of the total number of predictions that were correct. It is calculated as (True Positives + True Negatives) / Total Observations. If the dataset is imbalanced, it's better to use a **balanced accuracy** score, which is calculated as the arithmetic mean of sensitivity (a.k.a., recall - the true positive rate) and specificity (true negative rate), effectively taking both classes into account in a balanced manner. Balanced accuracy compensates for the bias in favor of the majority class by giving equal weight to each class's sensitivity.
   - **Precision:** This is the ratio of correctly predicted positive observations to the total predicted positives (True Positives / (True Positives + False Positives)). High precision indicates that false positive error is low.
@@ -46,6 +48,7 @@ Glantz Adam Bootcamp RUT-VIRT-DATA-PT-04-2023-U-LOLC-MWTH - Module 20
   - **Recall:** 100% of the healthy loans in the dataset were identified correctly as healthy and 100% of the high-risk loans were also identified correctly as such. Oversampling improved recall for high-risk loans
 
 ## 3. Summary:
+
 * **I recommend using the model from iteration 2,** in which artificial oversampling was used to equalize the volume of each value of the `y` variable. The model has high, often nearly perfect, scores across the indicators of balanced accuracy, precision, and recall. When compared to the first iteration, it improved accuracy and recall for the smaller class (i.e., the `High-Risk Loan`, or `1`, class) without lowering it for the larger class (i.e., the 'Healthy Loan", or `0` class). In absolute terms, misclassification of cases is vanishingly rare.
 * I suggest that gauging the performance of a model can only be meaningfully accomplished in the context of the problem one trying to solve. **In this case, identifying the high-risk loans is more important than identifying the healthy ones.** Misclassifying a healthy loan as a high-risk loan only incurs an opportunity cost or perhaps the occasional heavy lift by customer service to explain and rectify a lapse, but letting a high-risk loan pass as a healthy loan can cause real damage to a lending institution. Since the number of high-risk loans in the data is small, it was challenging for a machine learning model to predict them with a high level of accuracy; it required inflating the number of high-risk loan records in the training set to optimize the ability to discern them.
 * As a caveat, **it is important to continue evaluating a model that achieves such high (e.g., 99-100%) scores**. High metrics could be a sign of data leakage, where information from the test set has leaked into the training process. This can lead to overly optimistic performance estimates that do not generalize well to new data. Moreover, while oversampling can improve performance on the minority class, it can also lead to overfitting on those samples, resulting in inflated metrics. The model might memorize the oversampled examples, including their "noise", rather than learning meaningful patterns. I suggest the following:
@@ -53,11 +56,11 @@ Glantz Adam Bootcamp RUT-VIRT-DATA-PT-04-2023-U-LOLC-MWTH - Module 20
   -  **Use validation techniques such as cross-validation** to assess the model's performance on different subsets of the data and see if the rosy performance survives the change.
   -  **Employ different random states besides "1" with the _RandomOverSampler_ function** to assess whether the model's performance remains consistent across multiple random samples.
 
-### 4. CONTRIBUTING
+## 4. Contributing:
 
 - [Glantz, Adam](https://www.linkedin.com/in/adam-glantz/): Annapolis, Maryland, USA, September 2023, email: adamglantz@yahoo.com
 
-### 5. ACKNOWLEDGEMENTS
+## 5. Acknowledgements:
 
 In addition to using the resources listed above, the author acquired query responses in OpenAI's [ChatGPT](https://chat.openai.com/) 3.5 and 4 apps, and the [VSCode GitHub Copilot](https://github.com/features/copilot) app V1.
 
@@ -66,6 +69,6 @@ The author also consulted code and results from a similar project publicly acces
 - [Ates, Ilkay](https://www.linkedin.com/in/ilkay-ates/): Fullerton, California, USA, March 2023. [Credit_Risk_Classification](https://github.com/IlkayAtes11/Credit_Risk_Classification)
 - [Inhapim, Camilla](https://www.linkedin.com/in/camillainhapim/): Atlanta, Georgia, USA, June 2023. [credit-risk-classification](https://github.com/cami5326/credit-risk-classification)
 
-### 6. LICENSES
+## 6. Licenses:
 
 - This program is allowed for free use via the [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license
