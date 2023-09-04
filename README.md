@@ -25,8 +25,8 @@ Glantz Adam Bootcamp RUT-VIRT-DATA-PT-04-2023-U-LOLC-MWTH - Module 20
   -  The model's performance was evaluated by calculating its [balanced accuracy score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.balanced_accuracy_score.html), generating a [confusion matrix](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html), and creating a [classification report](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html)
   -  In a subsequent round, [_RandomOverSampler_](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.RandomOverSampler.html) resamples the data to make the quantities artificially equal for each value of `y`
   -  A new logistic regression model was instantiated using the _LogisticRegression_ classifier and fitted using the resampled training data
-  -  The model was then used to make new predictions feom the testing data
-  -  The revised model's performance was evaluated by calculating its accuracy score, generating a confusion matrix, and creating a classification report
+  -  The model was then used to make new predictions from the testing data
+  -  The revised model's performance was evaluated by calculating its balanced accuracy score, generating a confusion matrix, and creating a classification report
 * The analysis used the following two methods:
   -  In the first iteration, the data was used as-is, even though there was a large imbalance in volume between values of the dependent variable. _train_test_split_ was used to divide the data into training and testing batches, the _LogisticRegression_ module created a predictive model, the training data was fitted to it, and predictions were made on the testing data.
   -  In the second round, the data was artificially resampled using the _RandomOverSampler_ function, so that both possible values of `y` have the same volume. As before, the _LogisticRegression_ module created a predictive model, the resampled training data was fitted to it, and new predictions were made on the testing data.
