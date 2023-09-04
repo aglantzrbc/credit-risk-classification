@@ -64,7 +64,7 @@ Glantz Adam Bootcamp RUT-VIRT-DATA-PT-04-2023-U-LOLC-MWTH - Module 20
 
 In addition to using the resources listed above, the author acquired query responses in OpenAI's [ChatGPT](https://chat.openai.com/) versions 3.5 and 4 apps, and the [VSCode GitHub Copilot](https://github.com/features/copilot) app V1.
 
-The author also consulted code and results from a similar project publicly accessible in a [GitHub](https://github.com/) repository and recoverable through [Google](https://www.google.com/) and comparable search engines:
+The author also consulted code and results from similar projects publicly accessible in [GitHub](https://github.com/) repositories and recoverable through [Google](https://www.google.com/) and comparable search engines:
 
 - [Ates, Ilkay](https://www.linkedin.com/in/ilkay-ates/): Fullerton, California, USA, March 2023. [Credit_Risk_Classification](https://github.com/IlkayAtes11/Credit_Risk_Classification)
 - [Inhapim, Camilla](https://www.linkedin.com/in/camillainhapim/): Atlanta, Georgia, USA, June 2023. [credit-risk-classification](https://github.com/cami5326/credit-risk-classification)
