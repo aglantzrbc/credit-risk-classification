@@ -34,24 +34,6 @@
   - **Precision:** A full 100% of loans the model predicted as healthy was actually healthy, but only 87% of loans the model predicted as high-risk were actually high-risk. These are identical to the findings from the first iteration before resampling, so precision hasn't improved. The model is "over-predicting", labeling some healthy loans as high-risk. The fact that balanced accuracy and recall are now both 100% across the board means that the small volume of error elided when these values are rounded up is clustering in the precision value for high-risk loans.
   - **Recall:** 100% of the healthy loans in the dataset were identified correctly as healthy and 100% of the high-risk loans were also identified correctly as such. Oversampling improved recall for high-risk loands
 
-This intial model was drawing from a dataset that had 75,036 low-risk loan data points and 2,500 high-risk data points. To resample the training data and ensure that the logistic regression model had an equal number of data points to draw from, the training set data was resampled with the `RandomOverSampler` module from <a href=https://imbalanced-learn.org/dev/index.html>imbalanced-learn</a>. This generated 56,277 data points for both low-risk (0) and high-risk (1) loans, based on the original dataset.
-
-The resampled data was used to build a new logistic regression model (Logistic Regression Model 2). The purpose of Logistic Regression Model 2 was to determine whether a loan to the borrower in the testing set would be low- or high-risk. The results are summarized below.
-
-## Results
-
-<strong>Logistic Regression Model 1:</strong>
-
-* Precision: 93% (an average--in predicting low-risk loans, the model was 100% precise, though the model was only 87% precise in predicting high-risk loans)
-* Accuracy: 94% 
-* Recall: 95% (an average--the model had 100% recall in predicting low-risk loans, but 89% recall in predicting high-risk loans)
-
-<strong>Logistic Regression Model 2:</strong>
-
-* Precision: 93% (an average--in predicting low-risk loans, the model was 100% precise, though the model was only 87% precise in predicting high-risk loans)
-* Accuracy: 100% 
-* Recall: 100%
-
 ## Summary
 
 Logistic Regression Model 2 is less likely to predict false negative results. However, based on the confusion matrices for each model, Logistic Regression Model 2 predicted slightly more false positives (low-risk when the actual was high-risk). 
